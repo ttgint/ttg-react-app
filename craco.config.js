@@ -1,28 +1,26 @@
 // Don't open the browser during development
 process.env.BROWSER = 'none';
+const ENV = process.env.NODE_ENV;
 const CracoLessPlugin = require('craco-less');
-const CracoAntDesignPlugin = require('craco-antd');
 
+const babelPlugins = [
+  ['babel-plugin-import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
+  ['babel-plugin-styled-components', { displayName: true }]
+];
+const babelTestPlugins = [];
 module.exports = {
   plugins: [
-    {
-      plugin: CracoAntDesignPlugin,
-      options: {
-        customizeTheme: {
-          '@font-size-base': '12px'
-        }
-      }
-    },
     {
       plugin: CracoLessPlugin,
       options: {
         lessLoaderOptions: {
           modifyVars: {
-            '@font-size-base': '12px'
+            '@primary-color': '#4a4a4a'
           },
           javascriptEnabled: true
         }
       }
     }
-  ]
+  ],
+  babel: { plugins: ENV === 'test' ? babelTestPlugins : babelPlugins }
 };
