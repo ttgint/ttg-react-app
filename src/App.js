@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import Routes from './routes';
+import Routes from './Routes';
 import reducers from './reducers';
 import logout from './actions/logout';
 import './style/style.css';
