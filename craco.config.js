@@ -1,7 +1,7 @@
-// Don't open the browser during development
-process.env.BROWSER = 'none';
-const ENV = process.env.NODE_ENV;
 const CracoLessPlugin = require('craco-less');
+
+process.env.BROWSER = 'none'; // Don't open the browser during development
+const ENV = process.env.NODE_ENV;
 
 const babelPlugins = [
   ['babel-plugin-import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
@@ -15,7 +15,7 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           modifyVars: {
-            '@primary-color': '#4a4a4a'
+            '@font-size-base': '12px'
           },
           javascriptEnabled: true
         }
