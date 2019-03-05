@@ -7,6 +7,8 @@ import { Layout, Menu, Icon } from 'antd';
 import styled from 'styled-components';
 import UserMenu from './components/user-menu';
 
+import Users from './pages/users';
+
 const { Header, Content, Sider } = Layout;
 
 const Trigger = styled(Icon)`
@@ -38,20 +40,10 @@ class Routes extends Component {
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '16px' }} />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['a']}>
-            <Menu.Item key="a">
+            <Menu.Item key="users">
               <Icon type="user" />
-              <span>nav a</span>
-              <Link to="/a">A</Link>
-            </Menu.Item>
-            <Menu.Item key="b">
-              <Icon type="video-camera" />
-              <span>nav b</span>
-              <Link to="/b">B</Link>
-            </Menu.Item>
-            <Menu.Item key="c">
-              <Icon type="upload" />
-              <span>nav c</span>
-              <Link to="/c">C</Link>
+              <span>Users</span>
+              <Link to="/users">Users</Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -72,11 +64,8 @@ class Routes extends Component {
             }}
           >
             <Switch>
-              <Route key="a" path="/a" component={null} />
-              <Route key="b" path="/b" component={null} />
-              <Route key="c" path="/c" component={null} />
-
-              <Route exact path="/" component={null} />
+              <Route key="users" path="/users" component={Users} />
+              <Route exact path="/" component={Users} />
             </Switch>
           </Content>
         </Layout>
