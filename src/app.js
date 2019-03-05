@@ -7,7 +7,6 @@ import axios from 'axios';
 import Routes from './routes';
 import reducers from './reducers';
 import logout from './actions/logout';
-import './style/style.css';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
