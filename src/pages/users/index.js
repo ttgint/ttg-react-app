@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from 'antd';
+import { List, Checkbox } from 'antd';
 import fetchAllUsers from '../../services/users';
 
 class Users extends Component {
@@ -27,6 +27,7 @@ class Users extends Component {
           dataSource={users}
           renderItem={item => <List.Item>{item}</List.Item>}
         />
+        <Checkbox.Group options={['Apple', 'Pear', 'Orange']} defaultValue={['Apple']} />
       </div>
     );
   }
