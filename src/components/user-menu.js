@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icon, Menu, Dropdown } from 'antd';
+import { Icon, Menu, Dropdown, Switch } from 'antd';
 import PropTypes from 'prop-types';
+import { useTheme } from '../ThemeContext';
 
 const TabHeaderUser = styled.div`
   width: 210px;
@@ -34,11 +35,15 @@ export const TabHeaderUserName = styled.p`
 
 const UserMenu = props => {
   const { username } = props;
+  const themeState = useTheme();
+  // onClick={() => themeState.toggle()}
   return (
     <TabHeaderUser>
       <Dropdown
         overlay={
           <Menu selectedKeys={[]}>
+            <Switch size="small" defaultChecked onClick={() => themeState.toggle()} />
+            Dark Theme
             <Menu.Item key="settings">
               <Icon type="setting" />
               Settings
