@@ -18,12 +18,72 @@ import {
   Checkbox
 } from 'antd';
 import moment from 'moment';
-import SideMenu from './SideMenu';
-import Navbar from '../Navbar';
 import ColorPicker from '../ColorPicker';
+import SelectComp from './../Lib/Form/Select';
 import './index.less';
-
-const { Content, Footer, Sider } = Layout;
+let themes = [
+  {
+    title : 'dark',
+    id: 1,
+    config : {
+      '@primary-color': '#0A53B0',
+      '@body-background': '#404041',
+      '@background-color-base': '#262626',
+      '@border-color-base': 'rgba(255, 255, 255, 0.25)',
+      '@border-color-split': '#363636',
+      '@btn-default-bg': '#262626',
+      '@component-background': '#171F22',
+      '@layout-body-background': '#363636',
+      '@layout-header-background': '#171F22',
+      '@layout-trigger-background': '#313232',
+      '@layout-trigger-color': 'fade(#fff, 80%)',
+      '@menu-dark-submenu-bg': '#171F22',
+      '@popover-bg': '#262629',
+      '@layout-sider-background': '#171F22',
+      '@secondary-color': '#0000ff',
+      '@text-color': '#E3E3E3',
+      '@text-color-secondary': '#E3E3E3',
+      '@heading-color': '#FFF9F3',
+      '@btn-primary-bg': '#397dcc',
+      '@processing-color': '#397dcc',
+      '@table-expanded-row-bg': '#3b3b3b',
+      '@table-header-bg': '#3a3a3b',
+      '@table-row-hover-bg': '#3a3a3b',
+      '@table-selected-row-bg': '#3a3a3a'
+    }
+  },
+  {
+    title : 'light',
+    id: 2,
+    config : {
+      '@primary-color': '#0A53B0',
+      '@body-background': '#404041',
+      '@background-color-base': '#262626',
+      '@border-color-base': 'rgba(255, 255, 255, 0.25)',
+      '@border-color-split': '#363636',
+      '@btn-default-bg': '#262626',
+      '@component-background': '#171F22',
+      '@layout-body-background': '#FFFFFF',
+      '@layout-header-background': '#171F22',
+      '@layout-trigger-background': '#313232',
+      '@layout-trigger-color': 'fade(#fff, 80%)',
+      '@menu-dark-submenu-bg': '#ccc',
+      '@popover-bg': '#262629',
+      '@layout-sider-background': '#fff',
+      '@secondary-color': '#0000ff',
+      '@text-color': '#000000',
+      '@text-color-secondary': '#E3E3E3',
+      '@heading-color': '#000',
+      '@btn-primary-bg': '#397dcc',
+      '@processing-color': '#397dcc',
+      '@table-expanded-row-bg': '#3b3b3b',
+      '@table-header-bg': '#3a3a3b',
+      '@table-row-hover-bg': '#3a3a3b',
+      '@table-selected-row-bg': '#3a3a3a'
+    }
+  }
+]
+const { Content } = Layout;
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
@@ -106,8 +166,7 @@ class App extends Component {
 
   handleColorChange = (varname, color) => {
     const { vars } = this.state;
-    if (varname) vars[varname] = color;
-    console.log(vars);
+    if (varname) vars[varname] = color;    
     window.less
       .modifyVars(vars)
       .then(() => {
@@ -120,40 +179,31 @@ class App extends Component {
       });
   };
 
-  onCollapse = collapsed => {
-    this.setState({ collapsed });
-    console.log('onCollapse', collapsed);
-  };
-
   getColorPicker = (varName, position) => (
-    <Row className="color-row" key={varName}>
-      <Col xs={4} className="color-palette">
-        <ColorPicker
-          type="sketch"
-          small
-          color={this.state.vars[varName]}
-          position={position || 'right'}
-          presetColors={[
-            '#F5222D',
-            '#FA541C',
-            '#FA8C16',
-            '#FAAD14',
-            '#FADB14',
-            '#A0D911',
-            '#52C41A',
-            '#13C2C2',
-            '#1890FF',
-            '#2F54EB',
-            '#722ED1',
-            '#EB2F96'
-          ]}
-          onChangeComplete={color => this.handleColorChange(varName, color)}
-        />
-      </Col>
-      <Col className="color-name" xs={20}>
-        {varName}
-      </Col>
-    </Row>
+    <div className="color-selection-wrapper">
+      <ColorPicker
+        type="sketch"
+        small
+        color={this.state.vars[varName]}
+        position={position || 'right'}
+        presetColors={[
+          '#F5222D',
+          '#FA541C',
+          '#FA8C16',
+          '#FAAD14',
+          '#FADB14',
+          '#A0D911',
+          '#52C41A',
+          '#13C2C2',
+          '#1890FF',
+          '#2F54EB',
+          '#722ED1',
+          '#EB2F96'
+        ]}
+        onChangeComplete={color => this.handleColorChange(varName, color)}
+      />
+      <span>{varName}</span>
+    </div>
   );
 
   resetTheme = () => {
@@ -166,7 +216,6 @@ class App extends Component {
   };
 
   render() {
-    const { collapsed } = this.state;
     const colorPickers = Object.keys(this.state.vars).map((varName, index) =>
       this.getColorPicker(varName, index > 3 ? 'top' : 'right')
     );
@@ -182,16 +231,44 @@ class App extends Component {
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>Theme</Breadcrumb.Item>
         </Breadcrumb>
-        <div>
-          <Row className="theme-heading">
-            {
-              <Icon
-                type={collapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={() => this.onCollapse(!collapsed)}
-              />
-            }
+        <div style={{ marginBottom: 50 }}>
+          <div style={{ marginBottom: 50 }}>
+            <SelectComp  
+              spaceLeft={5}
+              allowClear
+              label="Price Currency"
+              optionValueKey="id"
+              value={this.state.selectedTheme}
+              update={e => {
+                let theme = themes.filter(i=> i.id === e)[0];
+                window.less
+                .modifyVars(theme.config)
+                .then(() => {                
+                  this.setState({ vars : theme.config });
+                  localStorage.setItem('app-theme', JSON.stringify(theme.config));
+                })
+                .catch(error => {
+                  message.error('Failed to update theme');
+                });                
+                this.setState({
+                  selectedTheme: e
+                });
+              }}
+              options={[
+                {
+                  id: 1,
+                  title: 'Dark'
+                },
+                {
+                  id: 2,
+                  title: 'Light'
+                }
+              ]}
+            />
+          </div>
+          <div style={{ marginBottom: 50 }}>
             <h3 className="title">Choose Theme Colors</h3>
-          </Row>
+          </div>
 
           {colorPickers}
         </div>

@@ -107,7 +107,7 @@ class AppHeader extends React.PureComponent {
 //     </div>
 //   );
   render = () => (
-    <Header className="header">
+    <Header>
       {this.props.user ? (
         <Link to={'/dashboard/profile'}>
           <TabHeaderUser>
