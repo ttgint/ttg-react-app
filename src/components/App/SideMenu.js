@@ -32,6 +32,7 @@ class SideMenu extends React.PureComponent {
     >
       <Menu
         mode="inline"
+        theme="light"
         openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
         defaultSelectedKeys={['1']}

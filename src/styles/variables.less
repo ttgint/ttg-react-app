@@ -1,7 +1,6 @@
 @import "~antd/es/style/themes/default.less";
 
-
-@background-color-base: #262626;
+@background-color-base: #F5F5F5;
 @body-background: #404041;
 @border-color-base: rgba(255, 255, 255, 0.25);
 @border-color-split: #363636;
@@ -11,11 +10,10 @@
 @layout-header-background: #171F22;
 @layout-sider-background: #171F22;
 @layout-trigger-background: #313232;
-@layout-trigger-color: fade(#fff, 80%);
+@layout-trigger-color: #FFFFFF;
 @menu-dark-submenu-bg: #171F22;
 @popover-bg: #262629;
-@primary-color: #0A53B0;
-@secondary-color: #ccc;
+@primary-color: #1890ff;
 @text-color: #E3E3E3;
 @heading-color: #FFF9F3;
 @text-color-secondary: fade(#fff, 65%);
@@ -24,3 +22,11 @@
 @table-header-bg:  #3a3a3b;
 @table-row-hover-bg:  #3a3a3b;
 @table-selected-row-bg:  #3a3a3a;
+@select-background: #FFFFFF;
+
+.ant-select-selection {
+    background-color: @select-background !important;
+}
+.ant-input {
+    background-color: @select-background !important;
+}

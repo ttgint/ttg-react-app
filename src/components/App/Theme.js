@@ -15,17 +15,51 @@ import {
   DatePicker,
   Progress,
   Timeline,
-  Checkbox
+  Checkbox,
+  Table
 } from 'antd';
 import moment from 'moment';
 import ColorPicker from '../ColorPicker';
 import SelectComp from './../Lib/Form/Select';
 import './index.less';
+const dataSource = [
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street'
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street'
+  }
+];
+
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name'
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age'
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address'
+  }
+];
+
 let themes = [
   {
-    title : 'dark',
+    title: 'dark',
     id: 1,
-    config : {
+    config: {
       '@primary-color': '#0A53B0',
       '@body-background': '#404041',
       '@background-color-base': '#262626',
@@ -36,11 +70,10 @@ let themes = [
       '@layout-body-background': '#363636',
       '@layout-header-background': '#171F22',
       '@layout-trigger-background': '#313232',
-      '@layout-trigger-color': 'fade(#fff, 80%)',
+      '@layout-trigger-color': '#FFFFFF',
       '@menu-dark-submenu-bg': '#171F22',
       '@popover-bg': '#262629',
-      '@layout-sider-background': '#171F22',
-      '@secondary-color': '#0000ff',
+      '@layout-sider-background': '#171F22',      
       '@text-color': '#E3E3E3',
       '@text-color-secondary': '#E3E3E3',
       '@heading-color': '#FFF9F3',
@@ -49,40 +82,41 @@ let themes = [
       '@table-expanded-row-bg': '#3b3b3b',
       '@table-header-bg': '#3a3a3b',
       '@table-row-hover-bg': '#3a3a3b',
-      '@table-selected-row-bg': '#3a3a3a'
+      '@table-selected-row-bg': '#3a3a3a',
+      '@select-background': '#FFFFFF'
     }
   },
   {
-    title : 'light',
+    title: 'light',
     id: 2,
-    config : {
-      '@primary-color': '#0A53B0',
-      '@body-background': '#404041',
-      '@background-color-base': '#262626',
-      '@border-color-base': 'rgba(255, 255, 255, 0.25)',
-      '@border-color-split': '#363636',
-      '@btn-default-bg': '#262626',
-      '@component-background': '#171F22',
-      '@layout-body-background': '#FFFFFF',
-      '@layout-header-background': '#171F22',
-      '@layout-trigger-background': '#313232',
-      '@layout-trigger-color': 'fade(#fff, 80%)',
-      '@menu-dark-submenu-bg': '#ccc',
-      '@popover-bg': '#262629',
-      '@layout-sider-background': '#fff',
-      '@secondary-color': '#0000ff',
-      '@text-color': '#000000',
-      '@text-color-secondary': '#E3E3E3',
-      '@heading-color': '#000',
-      '@btn-primary-bg': '#397dcc',
-      '@processing-color': '#397dcc',
-      '@table-expanded-row-bg': '#3b3b3b',
-      '@table-header-bg': '#3a3a3b',
-      '@table-row-hover-bg': '#3a3a3b',
-      '@table-selected-row-bg': '#3a3a3a'
+    config: {
+      '@primary-color': '#1890ff',
+      '@body-background': '#FFFFFF',
+      '@background-color-base': '#F5F5F5',
+      '@border-color-base': '#D9D9D9',
+      '@border-color-split': '#E8E8E8',
+      '@btn-default-bg': '#FFFFFF',
+      '@component-background': '#FFFFFF',
+      '@layout-body-background': '#f0f2f5',
+      '@layout-header-background': '#001529',
+      '@layout-trigger-background': '#002140',
+      '@layout-trigger-color': '#FFFFFF',
+      '@menu-dark-submenu-bg': '#000c17',
+      '@popover-bg': '#FFFFFF',
+      '@layout-sider-background': '#001529',      
+      '@text-color': 'rgba(0,0,0,.65)',
+      '@text-color-secondary': 'rgba(0,0,0,.45)',
+      '@heading-color': 'rgba(0,0,0,.85)',
+      '@btn-primary-bg': '#1890ff',
+      '@processing-color': '#1890ff',
+      '@table-expanded-row-bg': '#fbfbfb',
+      '@table-header-bg': '#FAFAFA',
+      '@table-row-hover-bg': '#FFFFFF',
+      '@table-selected-row-bg': '#3a3a3a',
+      '@select-background': '#FFFFFF'
     }
   }
-]
+];
 const { Content } = Layout;
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -103,11 +137,10 @@ class App extends Component {
       '@layout-body-background': '#363636',
       '@layout-header-background': '#171F22',
       '@layout-trigger-background': '#313232',
-      '@layout-trigger-color': 'fade(#fff, 80%)',
+      '@layout-trigger-color': '#FFFFFF',
       '@menu-dark-submenu-bg': '#171F22',
       '@popover-bg': '#262629',
-      '@layout-sider-background': '#171F22',
-      '@secondary-color': '#0000ff',
+      '@layout-sider-background': '#171F22',      
       '@text-color': '#E3E3E3',
       '@text-color-secondary': '#E3E3E3',
       '@heading-color': '#FFF9F3',
@@ -116,7 +149,8 @@ class App extends Component {
       '@table-expanded-row-bg': '#3b3b3b',
       '@table-header-bg': '#3a3a3b',
       '@table-row-hover-bg': '#3a3a3b',
-      '@table-selected-row-bg': '#3a3a3a'
+      '@table-selected-row-bg': '#3a3a3a',
+      '@select-background': '#FFFFFF'
     };
     let vars = {};
 
@@ -166,7 +200,7 @@ class App extends Component {
 
   handleColorChange = (varname, color) => {
     const { vars } = this.state;
-    if (varname) vars[varname] = color;    
+    if (varname) vars[varname] = color;
     window.less
       .modifyVars(vars)
       .then(() => {
@@ -233,23 +267,25 @@ class App extends Component {
         </Breadcrumb>
         <div style={{ marginBottom: 50 }}>
           <div style={{ marginBottom: 50 }}>
-            <SelectComp  
-              spaceLeft={5}
+            <SelectComp
               allowClear
-              label="Price Currency"
+              label="Select Theme"
               optionValueKey="id"
               value={this.state.selectedTheme}
               update={e => {
-                let theme = themes.filter(i=> i.id === e)[0];
+                let theme = themes.filter(i => i.id === e)[0];
                 window.less
-                .modifyVars(theme.config)
-                .then(() => {                
-                  this.setState({ vars : theme.config });
-                  localStorage.setItem('app-theme', JSON.stringify(theme.config));
-                })
-                .catch(error => {
-                  message.error('Failed to update theme');
-                });                
+                  .modifyVars(theme.config)
+                  .then(() => {
+                    this.setState({ vars: theme.config });
+                    localStorage.setItem(
+                      'app-theme',
+                      JSON.stringify(theme.config)
+                    );
+                  })
+                  .catch(error => {
+                    message.error('Failed to update theme');
+                  });
                 this.setState({
                   selectedTheme: e
                 });
@@ -273,6 +309,9 @@ class App extends Component {
           {colorPickers}
         </div>
         <Row>
+          <Col xs={24} lg={{ span: 15, offset: 3 }}>
+            <Table dataSource={dataSource} columns={columns} />;
+          </Col>
           <Col xs={24} lg={{ span: 15, offset: 3 }}>
             <Form onSubmit={this.handleSubmit}>
               <Col xs={24} md={12}>

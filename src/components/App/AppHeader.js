@@ -71,65 +71,49 @@ class AppHeader extends React.PureComponent {
     //   });
     // });
   }
-//   content = items => (
-//     <div className="notification_holder">
-//       {items.map((item, key) =>
-//         item.route ? (
-//           <a
-//             rel="noopener noreferrer"
-//             key={key}
-//             className="notification_item"
-//             // target="_blank"
-//             href={item.route}
-//           >
-//             <div className="media">
-//               <Icon style={{ color: 'green' }} type="check-circle" />
-//             </div>
-//             <div className="content">
-//               <p className="title">{item.title}</p>
-//               <p className="description">{item.description}</p>
-//               <span className="date">{formatDate(item.created_at)}</span>
-//             </div>
-//           </a>
-//         ) : (
-//           <div key={key} className="notification_item">
-//             <div className="media">
-//               <Icon style={{ color: 'green' }} type="check-circle" />
-//             </div>
-//             <div className="content">
-//               <p className="title">{item.title}</p>
-//               <p className="description">{item.description}</p>
-//               <span className="date">{formatDate(item.created_at)}</span>
-//             </div>
-//           </div>
-//         )
-//       )}
-//     </div>
-//   );
+  //   content = items => (
+  //     <div className="notification_holder">
+  //       {items.map((item, key) =>
+  //         item.route ? (
+  //           <a
+  //             rel="noopener noreferrer"
+  //             key={key}
+  //             className="notification_item"
+  //             // target="_blank"
+  //             href={item.route}
+  //           >
+  //             <div className="media">
+  //               <Icon style={{ color: 'green' }} type="check-circle" />
+  //             </div>
+  //             <div className="content">
+  //               <p className="title">{item.title}</p>
+  //               <p className="description">{item.description}</p>
+  //               <span className="date">{formatDate(item.created_at)}</span>
+  //             </div>
+  //           </a>
+  //         ) : (
+  //           <div key={key} className="notification_item">
+  //             <div className="media">
+  //               <Icon style={{ color: 'green' }} type="check-circle" />
+  //             </div>
+  //             <div className="content">
+  //               <p className="title">{item.title}</p>
+  //               <p className="description">{item.description}</p>
+  //               <span className="date">{formatDate(item.created_at)}</span>
+  //             </div>
+  //           </div>
+  //         )
+  //       )}
+  //     </div>
+  //   );
   render = () => (
-    <Header>
-      {this.props.user ? (
-        <Link to={'/dashboard/profile'}>
-          <TabHeaderUser>
-            {this.props.user.profile_media_id ? (
-              <img
-                className="header_profile_media_photo"
-                alt="profile"
-                src={`${baseUrl}/api/media/storage/${
-                  this.props.user.profile_media_id
-                }`}
-              />
-            ) : (
-              <TabHeaderUserIcon type="user" />
-            )}
+    <Header className="header-ttg">
+      <TabHeaderUser>
+        <TabHeaderUserIcon type="user" />
 
-            <TabHeaderUserName>
-              {this.props.user.name} {this.props.user.surname}
-            </TabHeaderUserName>
-            <TabHeaderUserRole>{this.props.user.email}</TabHeaderUserRole>
-          </TabHeaderUser>
-        </Link>
-      ) : null}
+        <TabHeaderUserName>TTG Developer</TabHeaderUserName>
+        <TabHeaderUserRole>developer@ttg.com</TabHeaderUserRole>
+      </TabHeaderUser>
 
       <Tooltip placement="bottom" title="Admin Settings">
         <HeaderMenuBtn right={130}>
@@ -143,9 +127,9 @@ class AppHeader extends React.PureComponent {
         <NotificationHeader>
           <Badge
             onClick={async () => {
-            //   this.props.config({
-            //     show_notification: true
-            //   });
+              //   this.props.config({
+              //     show_notification: true
+              //   });
               if (this.state.newNotificaitonsLength > 0) {
                 // await axios.post(`${baseUrl}/api/brain/notification/seen`);
               }
@@ -172,8 +156,8 @@ class AppHeader extends React.PureComponent {
                   type="close-circle"
                 />
               </div> */}
-              {/* {this.content(this.state.notifications)} */}
-            {/* </div>
+          {/* {this.content(this.state.notifications)} */}
+          {/* </div>
           ) : null} */}
         </NotificationHeader>
       </Tooltip>
@@ -185,4 +169,4 @@ class AppHeader extends React.PureComponent {
     </Header>
   );
 }
-export default AppHeader
+export default AppHeader;
