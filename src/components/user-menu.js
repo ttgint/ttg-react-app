@@ -1,36 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Icon, Menu, Dropdown } from 'antd';
 import PropTypes from 'prop-types';
-
-const TabHeaderUser = styled.div`
-  width: 210px;
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  top: 1px;
-  height: 60px;
-  border-left: 1px solid #efefef;
-  button {
-    float: right;
-    margin: 17px 0px 0px 0px;
-    position: relative;
-    right: 10px;
-  }
-`;
-const TabHeaderUserIcon = styled(Icon)`
-  color: #212121;
-  left: 12px;
-  top: 20px;
-  position: absolute;
-  font-size: 26px !important;
-`;
-
-export const TabHeaderUserName = styled.p`
-  color: #212121;
-  padding-left: 50px;
-  position: absolute;
-`;
+import { TabHeaderUser, TabHeaderUserIcon, TabHeaderUserName } from '../styles';
 
 const UserMenu = props => {
   const { username } = props;

@@ -4,23 +4,12 @@ import { Switch } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Icon } from 'antd';
-import styled from 'styled-components';
+import { Trigger } from './styles';
 import UserMenu from './components/user-menu';
 
 import Users from './pages/users';
 
 const { Header, Content, Sider } = Layout;
-
-const Trigger = styled(Icon)`
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-  &:hover {
-    color: #1890ff;
-  }
-`;
 
 class Routes extends Component {
   state = {
@@ -48,7 +37,7 @@ class Routes extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }}>
+          <Header>
             <Trigger
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
@@ -58,9 +47,7 @@ class Routes extends Component {
           <Content
             style={{
               margin: '24px 16px',
-              padding: 24,
-              background: '#fff',
-              minHeight: 280
+              padding: 24
             }}
           >
             <Switch>

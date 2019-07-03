@@ -34,18 +34,7 @@
   },
   "eslintConfig": {
     "extends": "@ttgint/eslint-config-react"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run test"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix .",
-      "git add"
-    ]
-  },
+  },  
   "browserslist": [
     ">0.2%",
     "not dead",
