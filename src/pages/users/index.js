@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { List, Checkbox } from 'antd';
+
 import fetchAllUsers from '../../services/users';
+import FancyCheckbox from './FancyCheckbox';
 
 class Users extends Component {
   constructor(props) {
@@ -19,15 +21,7 @@ class Users extends Component {
 
     return (
       <div>
-        <h3 style={{ marginBottom: 16 }}>Default Size</h3>
-        <List
-          header={<div>Header</div>}
-          footer={<div>Footer</div>}
-          bordered
-          dataSource={users}
-          renderItem={item => <List.Item>{item}</List.Item>}
-        />
-        <Checkbox.Group options={['Apple', 'Pear', 'Orange']} defaultValue={['Apple']} />
+        <FancyCheckbox />
       </div>
     );
   }
