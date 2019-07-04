@@ -30,7 +30,7 @@ const UserMenu = props => {
           }}
         >
           <TabHeaderUserIcon type="user" theme="outlined" />
-          <TabHeaderUserName>{username}</TabHeaderUserName>
+          <TabHeaderUserName>User Name</TabHeaderUserName>
           <Icon
             style={{
               position: 'absolute',

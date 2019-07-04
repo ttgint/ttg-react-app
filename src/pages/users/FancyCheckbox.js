@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
+// import 'antd/dist/antd.css';
 
 class Users extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      theme: 'dark',
+      stylePath: 'dark.css'
+    };
   }
 
   render = () => (
-    <div className="wrapper">
-      <input type="checkbox" id="hide-checkbox" />
-      <label htmlFor="hide-checkbox" className="toggle">
+    <div className="fancy-checkobx-wrapper">
+      <link rel="stylesheet" type="text/css" href={this.state.stylePath} />
+      <p>{this.state.theme}</p>
+      <p>{this.state.stylePath}</p>
+      <input
+        onChange={e => {
+          this.setState({
+            theme: this.state.theme === 'light' ? 'dark' : 'light',
+            stylePath: this.state.stylePath === 'light.css' ? 'dark.css' : 'light.css'
+          });
+        }}
+        type="checkbox"
+        id="fancy-checkox"
+      />
+      <label htmlFor="fancy-checkox" checked={this.state.theme === 'light'} className="toggle">
         <span className="toggle-button">
           <span className="crater crater-1" />
           <span className="crater crater-2" />
@@ -33,7 +49,3 @@ class Users extends Component {
 }
 
 export default Users;
-{
-  /* <div class="wrapper">
-      <input type="checkbox" id="hide-checkbox"></input> */
-}

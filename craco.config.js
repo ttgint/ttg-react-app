@@ -80,32 +80,6 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           modifyVars: themes.filter(i => i.title === selectedTheme)[0].config,
-          // modifyVars: {
-          //   '@primary-color': '#0A53B0',
-          //   '@body-background': '#404041',
-          //   '@background-color-base': '#262626',
-          //   '@border-color-base': 'rgba(255, 255, 255, 0.25)',
-          //   '@border-color-split': '#363636',
-          //   '@btn-default-bg': '#262626',
-          //   '@component-background': '#171F22',
-          //   '@layout-body-background': '#363636',
-          //   '@layout-header-background': '#171F22',
-          //   '@layout-trigger-background': '#313232',
-          //   '@layout-trigger-color': '#FFFFFF',
-          //   '@menu-dark-submenu-bg': '#171F22',
-          //   '@popover-bg': '#262629',
-          //   '@layout-sider-background': '#171F22',
-          //   '@text-color': '#E3E3E3',
-          //   '@text-color-secondary': '#E3E3E3',
-          //   '@heading-color': '#FFF9F3',
-          //   '@btn-primary-bg': '#397dcc',
-          //   '@processing-color': '#397dcc',
-          //   '@table-expanded-row-bg': '#3b3b3b',
-          //   '@table-header-bg': '#3a3a3b',
-          //   '@table-row-hover-bg': '#3a3a3b',
-          //   '@table-selected-row-bg': '#3a3a3a',
-          //   '@select-background': '#FFFFFF'
-          // },
           javascriptEnabled: true
         }
       }
