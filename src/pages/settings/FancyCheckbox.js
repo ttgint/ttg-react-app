@@ -11,6 +11,7 @@ class Users extends Component {
 
   render = () => (
     <div className="fancy-checkobx-wrapper">
+      <p>Change Theme</p>
       <input
         onChange={e => {
           this.props.config({
