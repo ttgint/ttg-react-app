@@ -1,56 +1,62 @@
 import React from 'react';
 import { Icon, Menu, Dropdown } from 'antd';
-import PropTypes from 'prop-types';
-import { TabHeaderUser, TabHeaderUserIcon, TabHeaderUserName } from '../styles';
+import { connect } from 'react-redux';
+import {
+  TabHeaderUser,
+  TabHeaderUserIcon,
+  TabHeaderUserName,
+  TabHeaderToggleIcon,
+  UserDropDownDetail
+} from '../styles';
 
-const UserMenu = props => {
-  const { username } = props;
-  return (
-    <TabHeaderUser>
-      <Dropdown
-        overlay={
-          <Menu selectedKeys={[]}>
-            <Menu.Item key="settings">
-              <Icon type="setting" />
-              Settings
-            </Menu.Item>
-            <Menu.Item key="logout">
-              <Icon type="logout" />
-              Logout
-            </Menu.Item>
-          </Menu>
-        }
-      >
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            display: 'block'
+class UserMenu extends React.Component {
+  state = {
+    openDropdown: false
+  };
+
+  render() {
+    return (
+      <TabHeaderUser ttgTheme={this.props.config.theme}>
+        <Dropdown
+          onVisibleChange={e => {
+            this.setState({
+              openDropdown: !this.state.openDropdown
+            });
           }}
+          trigger={['click']}
+          overlay={
+            <UserDropDownDetail ttgTheme={this.props.config.theme}>
+              <p>User Name</p>
+              <p>tser.mame@gmail.com</p>
+            </UserDropDownDetail>
+          }
         >
-          <TabHeaderUserIcon type="user" theme="outlined" />
-          <TabHeaderUserName>User Name</TabHeaderUserName>
-          <Icon
+          <div
             style={{
-              position: 'absolute',
-              right: 20,
-              top: 25
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              display: 'block'
             }}
-            type="down"
-          />
-        </div>
-      </Dropdown>
-    </TabHeaderUser>
-  );
-};
+          >
+            <TabHeaderUserIcon ttgTheme={this.props.config.theme} type="user" theme="outlined" />
+            <TabHeaderUserName ttgTheme={this.props.config.theme}>User Name</TabHeaderUserName>
+            <TabHeaderToggleIcon
+              ttgTheme={this.props.config.theme}
+              type={this.state.openDropdown ? 'close' : 'down'}
+            />
+          </div>
+        </Dropdown>
+      </TabHeaderUser>
+    );
+  }
+}
 
-UserMenu.defaultProps = {
-  username: 'N/A'
-};
+const mapStateToProps = state => ({
+  config: state.config
+});
 
-UserMenu.propTypes = {
-  username: PropTypes.string
-};
-
-export default UserMenu;
+export default connect(
+  mapStateToProps,
+  {}
+)(UserMenu);

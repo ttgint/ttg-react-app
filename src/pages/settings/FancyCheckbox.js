@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import config from '../../actions/config';
 // import 'antd/dist/antd.css';
 
 class Users extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: 'dark',
-      stylePath: 'dark.css'
-    };
+    this.state = {};
   }
 
   render = () => (
     <div className="fancy-checkobx-wrapper">
-      <link rel="stylesheet" type="text/css" href={this.state.stylePath} />
-      <p>{this.state.theme}</p>
-      <p>{this.state.stylePath}</p>
       <input
         onChange={e => {
-          this.setState({
-            theme: this.state.theme === 'light' ? 'dark' : 'light',
-            stylePath: this.state.stylePath === 'light.css' ? 'dark.css' : 'light.css'
+          this.props.config({
+            theme: this.props.config_data.theme === 'light' ? 'dark' : 'light'
           });
         }}
         type="checkbox"
         id="fancy-checkox"
       />
-      <label htmlFor="fancy-checkox" checked={this.state.theme === 'light'} className="toggle">
+      <label
+        htmlFor="fancy-checkox"
+        checked={this.props.config_data.theme === 'light'}
+        className="toggle"
+      >
         <span className="toggle-button">
           <span className="crater crater-1" />
           <span className="crater crater-2" />
@@ -48,4 +47,14 @@ class Users extends Component {
   );
 }
 
-export default Users;
+const mapStateToProps = state => ({
+  user: state.auth.user,
+  config_data: state.config
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    config
+  }
+)(Users);

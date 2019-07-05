@@ -7,10 +7,11 @@ import axios from 'axios';
 import Routes from './routes';
 import reducers from './reducers';
 import logout from './actions/logout';
+import get_config from './actions/get_config';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
-
+store.dispatch(get_config());
 axios.interceptors.response.use(null, error => {
   // Do something with response error
   if (error.response.status === 401) {

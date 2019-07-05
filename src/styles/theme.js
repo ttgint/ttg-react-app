@@ -1,9 +1,20 @@
 //  Dark Theme
 
 export default {
-  headerUserIconColor: '#ffffff',
-  headerUserNameColor: '#ffffff',
-  menuTriggerColor: '#ffffff'
+  dark: {
+    headerUserIconColor: '#dddddd',
+    headerUserNameColor: '#dddddd',
+    menuTriggerColor: '#dddddd',
+    userDropDownDetailBackgorund: '#fff',
+    userDropDownDetailColor: '#212121'
+  },
+  light: {
+    headerUserIconColor: '#ffffff',
+    headerUserNameColor: '#ffffff',
+    menuTriggerColor: '#ffffff',
+    userDropDownDetailBackgorund: '#212121',
+    userDropDownDetailColor: '#fff'
+  }
 };
 
 // Light Theme

@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import { Layout, Menu, Icon } from 'antd';
 import { Trigger } from './styles';
 import UserMenu from './components/user-menu';
-
-import Users from './pages/users';
+import Settings from './pages/settings';
 
 const { Header, Content, Sider } = Layout;
 
@@ -25,38 +24,49 @@ class Routes extends Component {
   render() {
     const { user } = this.props;
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '16px' }} />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['a']}>
-            <Menu.Item key="users">
-              <Icon type="user" />
-              <span>Users</span>
-              <Link to="/users">Users</Link>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout>
-          <Header>
-            <Trigger
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
+      <div>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href={this.props.config.theme === 'dark' ? 'dark.css' : 'light.css'}
+        />
+
+        <Layout style={{ minHeight: '100vh' }}>
+          <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+            <div
+              style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '16px' }}
             />
-            <UserMenu username={user.username} />
-          </Header>
-          <Content
-            style={{
-              margin: '24px 16px',
-              padding: 24
-            }}
-          >
-            <Switch>
-              <Route key="users" path="/users" component={Users} />
-              <Route exact path="/" component={Users} />
-            </Switch>
-          </Content>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={['a']}>
+              <Menu.Item key="settings">
+                <Icon type="setting" />
+                <span>Settings</span>
+                <Link to="/settings">Settings</Link>
+              </Menu.Item>
+            </Menu>
+          </Sider>
+          <Layout>
+            <Header>
+              <Trigger
+                ttgTheme={this.props.config.theme}
+                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                onClick={this.toggle}
+              />
+              <UserMenu username={user.username} />
+            </Header>
+            <Content
+              style={{
+                margin: '24px 16px',
+                padding: 24
+              }}
+            >
+              <Switch>
+                <Route key="settings" path="/settings" component={Settings} />
+                <Route exact path="/" component={Settings} />
+              </Switch>
+            </Content>
+          </Layout>
         </Layout>
-      </Layout>
+      </div>
     );
   }
 }
@@ -70,10 +80,11 @@ Routes.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  user: state.auth.user
+  user: state.auth.user,
+  config: state.config
 });
 
 export default connect(
   mapStateToProps,
-  null
+  {}
 )(Routes);
