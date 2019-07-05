@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import FancyCheckbox from './FancyCheckbox';
-
-class Users extends Component {
+class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,10 +9,10 @@ class Users extends Component {
   render() {
     return (
       <div>
-        <FancyCheckbox />
+        <p>Default Page</p>
       </div>
     );
   }
 }
 
-export default Users;
+export default Settings;

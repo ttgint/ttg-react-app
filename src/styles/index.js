@@ -62,6 +62,35 @@ const TabHeaderToggleIcon = styled(Icon)`
   right: 20px;
   top: 25px;
 `;
+const HeaderMenuBtn = styled.button`
+  color: #fff;
+  right: ${props => props.right}px;
+  position: absolute;
+  top: -1px;
+  background-color: transparent;
+  width: 60px;
+  border: 0px;
+  font-size: 22px;
+  outline: none;
+  cursor: pointer;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 21px;
+    height: 25px;
+    width: 1px;
+    background-color: #fff;
+  }
+  &:hover {
+    a {
+      color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
+    }
+  }
+  a {
+    color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
+  }
+`;
 
 export {
   TabHeaderUserIcon,
@@ -69,5 +98,6 @@ export {
   TabHeaderUserName,
   TabHeaderUser,
   TabHeaderToggleIcon,
-  UserDropDownDetail
+  UserDropDownDetail,
+  HeaderMenuBtn
 };

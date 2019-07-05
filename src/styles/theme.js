@@ -6,14 +6,16 @@ export default {
     headerUserNameColor: '#dddddd',
     menuTriggerColor: '#dddddd',
     userDropDownDetailBackgorund: '#fff',
-    userDropDownDetailColor: '#212121'
+    userDropDownDetailColor: '#212121',
+    headerMenuBtnColor: '#212121'
   },
   light: {
     headerUserIconColor: '#ffffff',
     headerUserNameColor: '#ffffff',
     menuTriggerColor: '#ffffff',
     userDropDownDetailBackgorund: '#212121',
-    userDropDownDetailColor: '#fff'
+    userDropDownDetailColor: '#ffffff',
+    headerMenuBtnColor: '#ffffff'
   }
 };
 

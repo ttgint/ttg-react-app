@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import config from '../../actions/config';
+import config from "../actions/config";
 // import 'antd/dist/antd.css';
 
-class Users extends Component {
+class FancyCheckbox extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,12 +20,9 @@ class Users extends Component {
         }}
         type="checkbox"
         id="fancy-checkox"
-      />
-      <label
-        htmlFor="fancy-checkox"
         checked={this.props.config_data.theme === 'light'}
-        className="toggle"
-      >
+      />
+      <label htmlFor="fancy-checkox" className="toggle">
         <span className="toggle-button">
           <span className="crater crater-1" />
           <span className="crater crater-2" />
@@ -58,4 +55,4 @@ export default connect(
   {
     config
   }
-)(Users);
+)(FancyCheckbox);

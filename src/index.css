@@ -13,10 +13,7 @@ code {
     monospace;
 }
 
-.fancy-checkobx-wrapper {
-  
-  
-}
+.fancy-checkobx-wrapper {}
 .fancy-checkobx-wrapper #fancy-checkox {
   opacity: 0;
   height: 0;

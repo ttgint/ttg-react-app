@@ -1,26 +1,30 @@
 import { CONFIG, GET_CONFIG } from '../actions/types';
 
-export default (
-  state = {
+let config = localStorage.getItem('config');
+if (config) {
+  config = JSON.parse(config);
+} else {
+  config = {
     preload_page: true,
     show_notification: false,
-    theme: 'dark'
-  },
-  action
-) => {
+    theme: 'dark',
+    collapsed: false,
+    visibleSettings: false
+  };
+}
+
+export default (state = config, action) => {
   switch (action.type) {
     case CONFIG:
       state = {
         ...state,
         ...action.payload
       };
+
+      localStorage.setItem('config', JSON.stringify(state));
       return state;
 
     case GET_CONFIG:
-      state = {
-        ...state,
-        ...action.payload
-      };
       return state;
 
     default:
