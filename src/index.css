@@ -276,3 +276,6 @@ code {
 .fancy-checkobx-wrapper p.morning {
   background: #e67e22;
 }
+.ant-layout-header {
+  padding: 0px !important;
+}

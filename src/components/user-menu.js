@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Menu, Dropdown } from 'antd';
+import { Dropdown } from 'antd';
 import { connect } from 'react-redux';
 import {
   TabHeaderUser,

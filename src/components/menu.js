@@ -14,10 +14,10 @@ class Routes extends Component {
       <Sider trigger={null} collapsible collapsed={this.props.config_data.collapsed}>
         <div style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '16px' }} />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['a']}>
-          <Menu.Item key="settings">
-            <Icon type="setting" />
-            <span>Settings</span>
-            <Link to="/settings">Settings</Link>
+          <Menu.Item key="sample_page">
+            <Icon type="minus" />
+            <span>Sample Page</span>
+            <Link to="/sample_page">Sample Page</Link>
           </Menu.Item>
         </Menu>
       </Sider>

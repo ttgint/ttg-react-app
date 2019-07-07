@@ -25,6 +25,28 @@ class Routes extends Component {
           <HeaderMenuBtn
             onClick={() => {
               this.props.config({
+                visibleHelp: !this.props.config.visibleHelp
+              });
+            }}
+            ttgTheme={this.props.config_data.theme}
+            right={335}
+          >
+            <Icon type="question-circle" />
+          </HeaderMenuBtn>
+          <HeaderMenuBtn
+            onClick={() => {
+              this.props.config({
+                visibleNotification: !this.props.config.visibleNotification
+              });
+            }}
+            ttgTheme={this.props.config_data.theme}
+            right={280}
+          >
+            <Icon type="notification" />
+          </HeaderMenuBtn>
+          <HeaderMenuBtn
+            onClick={() => {
+              this.props.config({
                 visibleSettings: !this.props.config.visibleSettings
               });
             }}

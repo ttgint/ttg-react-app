@@ -6,7 +6,8 @@ if (config) {
 } else {
   config = {
     preload_page: true,
-    show_notification: false,
+    visibleHelp: false,
+    visibleNotification: false,
     theme: 'dark',
     collapsed: false,
     visibleSettings: false

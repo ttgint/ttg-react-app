@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Layout, Drawer } from 'antd';
 import Header from './components/header';
 import Menu from './components/menu';
-import Settings from './pages/settings';
+import SamplePage from './pages/sample_page';
 import config from './actions/config';
 import FancyCheckbox from './components/fancy-checkbox';
 
@@ -30,6 +30,32 @@ class Routes extends Component {
         />
         <Layout style={{ minHeight: '100vh' }}>
           <Drawer
+            title="Notification"
+            placement="right"
+            closable={false}
+            onClose={() => {
+              this.props.config({
+                visibleNotification: false
+              });
+            }}
+            visible={this.props.config_data.visibleNotification}
+          >
+            <p>Notification Content</p>
+          </Drawer>
+          <Drawer
+            title="Help"
+            placement="right"
+            closable={false}
+            onClose={() => {
+              this.props.config({
+                visibleHelp: false
+              });
+            }}
+            visible={this.props.config_data.visibleHelp}
+          >
+            <p>Help Content</p>
+          </Drawer>
+          <Drawer
             title="Settings"
             placement="right"
             closable={false}
@@ -52,8 +78,8 @@ class Routes extends Component {
               }}
             >
               <Switch>
-                <Route key="settings" path="/settings" component={Settings} />
-                <Route exact path="/" component={Settings} />
+                <Route key="settings" path="/sample_page" component={SamplePage} />
+                <Route exact path="/" component={SamplePage} />
               </Switch>
             </Content>
           </Layout>

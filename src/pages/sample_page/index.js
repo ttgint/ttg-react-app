@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Settings extends Component {
+class SamplePage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -9,10 +9,10 @@ class Settings extends Component {
   render() {
     return (
       <div>
-        <p>Default Page</p>
+        <p>Sample Page</p>
       </div>
     );
   }
 }
 
-export default Settings;
+export default SamplePage;
