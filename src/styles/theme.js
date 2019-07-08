@@ -5,16 +5,16 @@ export default {
     headerUserIconColor: '#dddddd',
     headerUserNameColor: '#dddddd',
     menuTriggerColor: '#dddddd',
-    userDropDownDetailBackgorund: '#fff',
-    userDropDownDetailColor: '#212121',
+    userDropDownDetailBackgorund: '#212121',
+    userDropDownDetailColor: '#ffffff',
     headerMenuBtnColor: '#212121'
   },
   light: {
     headerUserIconColor: '#ffffff',
     headerUserNameColor: '#ffffff',
     menuTriggerColor: '#ffffff',
-    userDropDownDetailBackgorund: '#212121',
-    userDropDownDetailColor: '#ffffff',
+    userDropDownDetailBackgorund: '#fff',
+    userDropDownDetailColor: '#212121',
     headerMenuBtnColor: '#ffffff'
   }
 };
