@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import { connect } from 'react-redux';
-import { Layout, Drawer } from 'antd';
+import { Layout, Drawer, Icon } from 'antd';
+import moment from 'moment';
 import Header from './components/header';
 import Menu from './components/menu';
 import SamplePage from './pages/sample_page';
@@ -33,6 +34,9 @@ class Routes extends Component {
             title="Notification"
             placement="right"
             closable={false}
+            bodyStyle={{
+              padding: 0
+            }}
             onClose={() => {
               this.props.config({
                 visibleNotification: false
@@ -40,7 +44,21 @@ class Routes extends Component {
             }}
             visible={this.props.config_data.visibleNotification}
           >
-            <p>Notification Content</p>
+            <div className="notifications_wraper">
+              <div className="notification_holder">
+                <div className="notification_item">
+                  <div className="media">
+                    <Icon style={{ color: 'green' }} type="check-circle" />
+                  </div>
+                  <div className="content">
+                    <p className="title">Notification Title</p>
+
+                    <p className="description">Description</p>
+                    <span className="date">2019/02/22 13:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Drawer>
           <Drawer
             title="Help"

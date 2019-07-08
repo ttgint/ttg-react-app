@@ -279,3 +279,93 @@ code {
 .ant-layout-header {
   padding: 0px !important;
 }
+
+.notifications_wraper:after {
+  top: -6px;
+  right: 26px;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+}
+.notifications_wraper .notification_holder {
+  overflow-y: scroll;
+  height: 100%;
+}
+.notifications_header {
+  line-height: 35px;
+  font-size: 13px;
+  border-bottom: 1px solid #efefef;
+  font-weight: bold;
+  padding: 10px 5px 10px 10px;
+}
+.notifications_header .close_icon {
+  font-size: 20px;
+  float: right;
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+.notifications_header .media .anticon {
+  color: #086c95;
+  cursor: pointer;
+  float: right;
+  font-size: 20px !important;
+  margin-top: 9px;
+  margin-right: 22px;
+}
+.notifications_wraper .notification_item {
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  padding-top: 10px;
+  min-height: 44px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.notifications_wraper .notification_item .title {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 3px;
+  line-height: 18px;
+  border-bottom: 1px solid #efefefef;
+  margin-right: 10px;
+}
+.notifications_wraper .notification_item .description {
+  font-size: 10px;
+  line-height: 14px;
+  margin-bottom: 12px;
+}
+.notifications_wraper .notification_item .date {
+  text-align: right;
+  float: right;
+  position: absolute;
+  bottom: 2px;
+  font-size: 9px;
+  right: 5px;
+  line-height: 15px;
+}
+.notifications_wraper .notification_item .media {
+  width: 15%;
+  padding-right: 15px;
+  border-right: 1px solid #efefef;
+}
+.notifications_wraper .notification_item .media .anticon {
+  font-size: 17px !important;
+  position: relative;
+  top: 4px;
+  left: 9px;
+}
+.notifications_wraper .notification_item .content {
+  width: 90%;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.ant-menu-item:first-child {
+  margin-top: 0px !important;
+}

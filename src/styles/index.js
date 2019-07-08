@@ -70,17 +70,12 @@ const HeaderMenuBtn = styled.button`
   background-color: transparent;
   width: 60px;
   border: 0px;
-  font-size: 22px;
+  font-size: 18px;
   outline: none;
   cursor: pointer;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 3px;
-    top: 21px;
-    height: 25px;
-    width: 1px;
-    background-color: #fff;
+  .anticon {
+    position: relative;
+    top: 3px;
   }
   &:hover {
     a {
