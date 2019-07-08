@@ -21,47 +21,52 @@ class Routes extends Component {
     const { user } = this.props;
     return (
       <Header>
-        <Tooltip placement="bottom" title="Settings">
-          <HeaderMenuBtn
-            onClick={() => {
-              this.props.config({
-                visibleHelp: !this.props.config.visibleHelp
-              });
-            }}
-            ttgTheme={this.props.config_data.theme}
-            right={335}
-          >
+        <UserMenu username={user.username} />
+        <HeaderMenuBtn
+          onClick={() => {
+            this.props.config({
+              visibleHelp: !this.props.config.visibleHelp
+            });
+          }}
+          ttgTheme={this.props.config_data.theme}
+          right={335}
+        >
+          <Tooltip placement="bottom" placement="left" title="Help">
             <Icon type="question-circle" />
-          </HeaderMenuBtn>
-          <HeaderMenuBtn
-            onClick={() => {
-              this.props.config({
-                visibleNotification: !this.props.config.visibleNotification
-              });
-            }}
-            ttgTheme={this.props.config_data.theme}
-            right={280}
-          >
+          </Tooltip>
+        </HeaderMenuBtn>
+        <HeaderMenuBtn
+          onClick={() => {
+            this.props.config({
+              visibleNotification: !this.props.config.visibleNotification
+            });
+          }}
+          ttgTheme={this.props.config_data.theme}
+          right={280}
+        >
+          <Tooltip placement="bottom" placement="left" title="Notification">
             <Icon type="notification" />
-          </HeaderMenuBtn>
-          <HeaderMenuBtn
-            onClick={() => {
-              this.props.config({
-                visibleSettings: !this.props.config.visibleSettings
-              });
-            }}
-            ttgTheme={this.props.config_data.theme}
-            right={225}
-          >
+          </Tooltip>
+        </HeaderMenuBtn>
+        <HeaderMenuBtn
+          onClick={() => {
+            this.props.config({
+              visibleSettings: !this.props.config.visibleSettings
+            });
+          }}
+          ttgTheme={this.props.config_data.theme}
+          right={225}
+        >
+          <Tooltip placement="bottom" placement="left" title="Settings">
             <Icon type="setting" />
-          </HeaderMenuBtn>
-        </Tooltip>
+          </Tooltip>
+        </HeaderMenuBtn>
+
         <Trigger
           ttgTheme={this.props.config_data.theme}
           type={this.props.config_data.collapsed ? 'menu-unfold' : 'menu-fold'}
           onClick={this.toggle}
         />
-        <UserMenu username={user.username} />
       </Header>
     );
   }

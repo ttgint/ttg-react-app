@@ -39,12 +39,12 @@ class UserMenu extends React.Component {
               display: 'block'
             }}
           >
-            <TabHeaderUserIcon ttgTheme={this.props.config.theme} type="user" theme="outlined" />
             <TabHeaderUserName ttgTheme={this.props.config.theme}>User Name</TabHeaderUserName>
-            <TabHeaderToggleIcon
+            <TabHeaderUserIcon ttgTheme={this.props.config.theme} type="user" theme="outlined" />
+            {/* <TabHeaderToggleIcon
               ttgTheme={this.props.config.theme}
               type={this.state.openDropdown ? 'close' : 'down'}
-            />
+            /> */}
           </div>
         </Dropdown>
       </TabHeaderUser>

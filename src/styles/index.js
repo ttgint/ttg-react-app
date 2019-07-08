@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import theme from './theme';
 
 const TabHeaderUser = styled.div`
-  width: 210px;
+  padding: 0px 20px 0px 0px;
   cursor: pointer;
-  position: absolute;
+  float: right;
   right: 0px;
   top: 1px;
-  height: 60px;
-  border-left: 1px solid #efefef;
+  height: 50px;
   button {
     float: right;
     margin: 17px 0px 0px 0px;
@@ -21,8 +20,11 @@ const TabHeaderUser = styled.div`
 
 const TabHeaderUserName = styled.p`
   color: ${props => theme[props.ttgTheme].headerUserNameColor} !important;
-  padding-left: 50px;
-  position: absolute;
+  padding-left: 15px;
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+  top: -8px;
 `;
 
 const UserDropDownDetail = styled.div`
@@ -31,6 +33,8 @@ const UserDropDownDetail = styled.div`
     color: ${props => theme[props.ttgTheme].userDropDownDetailColor} !important;
   }
   padding: 10px 15px;
+  right: -20px;
+  top: -4px;
   width: 209px;
   position: absolute;
   border-bottom-left-radius: 5px;
@@ -42,6 +46,8 @@ const Trigger = styled(Icon)`
   padding: 0 24px;
   cursor: pointer;
   transition: color 0.3s;
+  position: relative;
+  top: -5px;
   color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
   &:hover {
     color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
@@ -50,9 +56,9 @@ const Trigger = styled(Icon)`
 
 const TabHeaderUserIcon = styled(Icon)`
   color: ${props => theme[props.ttgTheme].headerUserIconColor} !important;
-  left: 12px;
-  top: 20px;
-  position: absolute;
+  position: relative;
+  top: -3px;
+  margin-left: 10px;
   font-size: 26px !important;
 `;
 
@@ -65,17 +71,18 @@ const TabHeaderToggleIcon = styled(Icon)`
 const HeaderMenuBtn = styled.button`
   color: #fff;
   right: ${props => props.right}px;
-  position: absolute;
+  float: right;
   top: -1px;
   background-color: transparent;
-  width: 60px;
+  width: 50px;
   border: 0px;
   font-size: 18px;
   outline: none;
   cursor: pointer;
+  height: 100%;
   .anticon {
     position: relative;
-    top: 3px;
+    top: -8px;
   }
   &:hover {
     a {

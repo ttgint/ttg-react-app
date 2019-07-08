@@ -12,7 +12,7 @@ class Routes extends Component {
   render() {
     return (
       <Sider trigger={null} collapsible collapsed={this.props.config_data.collapsed}>
-        <div style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '16px' }} />
+        <div style={{ height: '32px', background: 'rgba(255, 255, 255, 0.2)', margin: '9px' }} />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['a']}>
           <Menu.Item key="sample_page">
             <Icon type="minus" />
