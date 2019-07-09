@@ -31,7 +31,7 @@ class Routes extends Component {
           ttgTheme={this.props.config_data.theme}
           right={335}
         >
-          <Tooltip placement="bottom" placement="left" title="Help">
+          <Tooltip placement="bottom" title="Help">
             <Icon type="question-circle" />
           </Tooltip>
         </HeaderMenuBtn>
@@ -44,7 +44,7 @@ class Routes extends Component {
           ttgTheme={this.props.config_data.theme}
           right={280}
         >
-          <Tooltip placement="bottom" placement="left" title="Notification">
+          <Tooltip placement="bottom" title="Notification">
             <Icon type="notification" />
           </Tooltip>
         </HeaderMenuBtn>
@@ -57,7 +57,7 @@ class Routes extends Component {
           ttgTheme={this.props.config_data.theme}
           right={225}
         >
-          <Tooltip placement="bottom" placement="left" title="Settings">
+          <Tooltip placement="bottom" title="Settings">
             <Icon type="setting" />
           </Tooltip>
         </HeaderMenuBtn>

@@ -28,7 +28,7 @@ const TabHeaderUserName = styled.p`
 `;
 
 const UserDropDownDetail = styled.div`
-  background-color: ${props => theme[props.ttgTheme].userDropDownDetailBackgorund} !important;
+  background-color: ${props => theme[props.ttgTheme].userDropDownDetailBg} !important;
   p {
     color: ${props => theme[props.ttgTheme].userDropDownDetailColor} !important;
   }
@@ -38,6 +38,9 @@ const UserDropDownDetail = styled.div`
   width: 209px;
   position: absolute;
   border-bottom-left-radius: 5px;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const Trigger = styled(Icon)`
@@ -47,7 +50,7 @@ const Trigger = styled(Icon)`
   cursor: pointer;
   transition: color 0.3s;
   position: relative;
-  top: -5px;
+  top: -7px;
   color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
   &:hover {
     color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
@@ -69,7 +72,7 @@ const TabHeaderToggleIcon = styled(Icon)`
   top: 25px;
 `;
 const HeaderMenuBtn = styled.button`
-  color: #fff;
+  color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
   right: ${props => props.right}px;
   float: right;
   top: -1px;
@@ -94,6 +97,15 @@ const HeaderMenuBtn = styled.button`
   }
 `;
 
+const WrapperContent = styled.div`
+  // background: #fff;
+  background: ${props => theme[props.ttgTheme].wrapperContentBg} !important;
+  padding: 24px;
+  margin: 20px 0px 0px 0px;
+  min-height: 280;
+  border-radius: 5px;
+`;
+
 export {
   TabHeaderUserIcon,
   Trigger,
@@ -101,5 +113,6 @@ export {
   TabHeaderUser,
   TabHeaderToggleIcon,
   UserDropDownDetail,
-  HeaderMenuBtn
+  HeaderMenuBtn,
+  WrapperContent
 };

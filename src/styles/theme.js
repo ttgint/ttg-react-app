@@ -5,17 +5,19 @@ export default {
     headerUserIconColor: '#dddddd',
     headerUserNameColor: '#dddddd',
     menuTriggerColor: '#dddddd',
-    userDropDownDetailBackgorund: '#212121',
+    userDropDownDetailBg: '#212121',
     userDropDownDetailColor: '#ffffff',
-    headerMenuBtnColor: '#212121'
+    headerMenuBtnColor: '#ffffff',
+    wrapperContentBg: '#232829'
   },
   light: {
-    headerUserIconColor: '#ffffff',
-    headerUserNameColor: '#ffffff',
-    menuTriggerColor: '#ffffff',
-    userDropDownDetailBackgorund: '#fff',
+    headerUserIconColor: '#212121',
+    headerUserNameColor: '#212121',
+    menuTriggerColor: '#212121',
+    userDropDownDetailBg: '#fff',
     userDropDownDetailColor: '#212121',
-    headerMenuBtnColor: '#ffffff'
+    headerMenuBtnColor: '#212121',
+    wrapperContentBg: '#ffffff'
   }
 };
 

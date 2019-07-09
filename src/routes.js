@@ -3,10 +3,10 @@ import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import { connect } from 'react-redux';
 import { Layout, Drawer, Icon } from 'antd';
-import moment from 'moment';
 import Header from './components/header';
 import Menu from './components/menu';
 import SamplePage from './pages/sample_page';
+import SampleComponentsView from './pages/sample_components_view';
 import config from './actions/config';
 import FancyCheckbox from './components/fancy-checkbox';
 
@@ -91,12 +91,17 @@ class Routes extends Component {
             <Header />
             <Content
               style={{
-                margin: '24px 16px',
-                padding: 24
+                margin: '10px 16px',
+                padding: 12
               }}
             >
               <Switch>
                 <Route key="settings" path="/sample_page" component={SamplePage} />
+                <Route
+                  key="settings"
+                  path="/sample_components_view"
+                  component={SampleComponentsView}
+                />
                 <Route exact path="/" component={SamplePage} />
               </Switch>
             </Content>
