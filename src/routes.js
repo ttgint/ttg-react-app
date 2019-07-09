@@ -33,7 +33,7 @@ class Routes extends Component {
           <Drawer
             title="Notification"
             placement="right"
-            closable={false}
+            closable
             bodyStyle={{
               padding: 0
             }}
@@ -63,7 +63,7 @@ class Routes extends Component {
           <Drawer
             title="Help"
             placement="right"
-            closable={false}
+            closable
             onClose={() => {
               this.props.config({
                 visibleHelp: false
@@ -76,7 +76,7 @@ class Routes extends Component {
           <Drawer
             title="Settings"
             placement="right"
-            closable={false}
+            closable
             onClose={() => {
               this.props.config({
                 visibleSettings: false

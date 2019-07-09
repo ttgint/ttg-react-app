@@ -1,3 +1,20 @@
+*::-webkit-scrollbar,
+.ant-menu::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track,
+.menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb,
+.menu::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px #2e698c;
+}
 body {
   margin: 0;
   padding: 0;
@@ -360,4 +377,10 @@ code {
 }
 .ant-layout-header {
   height: 50px !important
+}
+.ant-drawer-right .ant-drawer-content-wrapper {
+  top: 50px;
+}
+.ant-drawer-left .ant-drawer-content-wrapper, .ant-drawer-right .ant-drawer-content-wrapper {
+  height: calc(100% - 50px);
 }
