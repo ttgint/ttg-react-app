@@ -22,6 +22,8 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { WrapperContent } from '../../styles/index';
 import config from '../../actions/config';
+import AreaChart from '../../components/area-chart';
+import BarChart from '../../components/bar-chart';
 
 const dataSource = [
   {
@@ -163,8 +165,10 @@ class App extends Component {
                     })(
                       <Upload name="logo" action="/upload.do" listType="picture">
                         <Button>
-                          <Icon type="upload" /> Click to upload
-                                                                        </Button>
+                          <Icon type="upload" />
+{' '}
+Click to upload
+</Button>
                       </Upload>
                     )}
                   </FormItem>
@@ -210,6 +214,16 @@ class App extends Component {
                 <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
                 <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
               </Timeline>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} lg={{ span: 15, offset: 3 }} style={{ marginTop: 15 }}>
+              <AreaChart dataAxis={['Saturday', 'Sunday', 'Monday']} data={[1000, 2000, 3000]} />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} lg={{ span: 15, offset: 3 }} style={{ marginTop: 15 }}>
+              <BarChart dataAxis={['Saturday', 'Sunday', 'Monday']} data={[1000, 2000, 3000]} />
             </Col>
           </Row>
         </WrapperContent>

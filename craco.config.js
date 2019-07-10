@@ -1,4 +1,5 @@
 const CracoLessPlugin = require('craco-less');
+const path = require('path');
 
 const selectedTheme = 'dark';
 
@@ -72,9 +73,48 @@ const babelPlugins = [
   ['babel-plugin-import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
   ['babel-plugin-styled-components', { displayName: true }]
 ];
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 const babelTestPlugins = [];
 module.exports = {
+  // webpack: {
+  //   alias: {},
+  //   plugins: [],
+  //   configure: {
+  //     /* Any webpack configuration options: https://webpack.js.org/configuration */
+  //   },
+  //   configure: (webpackConfig, { env, paths }) => {
+  //     const orig = webpackConfig.module.rules[1].oneOf[1].include;
+  //     webpackConfig.module.rules[1].oneOf[1].include = [
+  //       orig,
+  //       resolve('node_modules/react-echarts-v3/src')
+  //     ];
+  //     return webpackConfig;
+  //   }
+  // },
   plugins: [
+    // {
+    //   plugin: {
+    //     overrideDevServerConfig: ({
+    //       devServerConfig,
+    //       cracoConfig,
+    //       pluginOptions,
+    //       context: { env, paths }
+    //     }) => {
+    //       console.log(JSON.stringify(devServerConfig));
+    //       const orig = devServerConfig.module.rules[1].oneOf[1].include;
+    //       devServerConfig.module.rules[1].oneOf[1].include = [
+    //         orig,
+    //         resolve('node_modules/react-echarts-v3/src')
+    //       ];
+    //       return devServerConfig;
+
+    //       // Always return the config object.
+    //       // return cracoConfig;
+    //     }
+    //   }
+    // },
     {
       plugin: CracoLessPlugin,
       options: {

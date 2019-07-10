@@ -8,6 +8,8 @@
     "axios": "^0.18.0",
     "craco-antd": "^1.11.0",
     "craco-less": "^1.9.0",
+    "echarts": "^4.2.1",
+    "echarts-for-react": "^2.0.15-beta.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -34,7 +36,7 @@
   },
   "eslintConfig": {
     "extends": "@ttgint/eslint-config-react"
-  },  
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
