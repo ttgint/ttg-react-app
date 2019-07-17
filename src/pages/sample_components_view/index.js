@@ -24,6 +24,7 @@ import { WrapperContent } from '../../styles/index';
 import config from '../../actions/config';
 import AreaChart from '../../components/area-chart';
 import BarChart from '../../components/bar-chart';
+import BarChart2 from '../../components/bar-chart2';
 
 const dataSource = [
   {
@@ -165,10 +166,8 @@ class App extends Component {
                     })(
                       <Upload name="logo" action="/upload.do" listType="picture">
                         <Button>
-                          <Icon type="upload" />
-{' '}
-Click to upload
-</Button>
+                          <Icon type="upload" /> Click to upload
+                                                                        </Button>
                       </Upload>
                     )}
                   </FormItem>
@@ -224,6 +223,11 @@ Click to upload
           <Row>
             <Col xs={24} lg={{ span: 15, offset: 3 }} style={{ marginTop: 15 }}>
               <BarChart dataAxis={['Saturday', 'Sunday', 'Monday']} data={[1000, 2000, 3000]} />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} lg={{ span: 15, offset: 3 }} style={{ marginTop: 15 }}>
+              <BarChart2 />
             </Col>
           </Row>
         </WrapperContent>

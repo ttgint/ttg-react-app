@@ -91,8 +91,10 @@ class Routes extends Component {
             <Header />
             <Content
               style={{
-                margin: '10px 16px',
-                padding: 12
+                margin: '0px',
+                padding: '22px 26px',
+                overflowY: 'scroll',
+                height: 'calc(100vh - 300px)'
               }}
             >
               <Switch>
