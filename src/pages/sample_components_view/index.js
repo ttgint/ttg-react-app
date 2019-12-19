@@ -93,7 +93,7 @@ class App extends Component {
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>Theme</Breadcrumb.Item>
         </Breadcrumb>
-        <WrapperContent ttgTheme={this.props.config_data.theme}>
+        <WrapperContent ttgtheme={this.props.config_data.theme}>
           <Row>
             <Col xs={24} lg={{ span: 15, offset: 3 }}>
               <Table dataSource={dataSource} columns={columns} />

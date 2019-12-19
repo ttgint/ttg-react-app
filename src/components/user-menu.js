@@ -16,7 +16,7 @@ class UserMenu extends React.Component {
 
   render() {
     return (
-      <TabHeaderUser ttgTheme={this.props.config.theme}>
+      <TabHeaderUser ttgtheme={this.props.config.theme}>
         <Dropdown
           onVisibleChange={e => {
             this.setState({
@@ -25,7 +25,7 @@ class UserMenu extends React.Component {
           }}
           trigger={['click']}
           overlay={
-            <UserDropDownDetail ttgTheme={this.props.config.theme}>
+            <UserDropDownDetail ttgtheme={this.props.config.theme}>
               <p>User Name</p>
               <p>tser.mame@gmail.com</p>
             </UserDropDownDetail>
@@ -39,10 +39,10 @@ class UserMenu extends React.Component {
               display: 'block'
             }}
           >
-            <TabHeaderUserName ttgTheme={this.props.config.theme}>User Name</TabHeaderUserName>
-            <TabHeaderUserIcon ttgTheme={this.props.config.theme} type="user" theme="outlined" />
+            <TabHeaderUserName ttgtheme={this.props.config.theme}>User Name</TabHeaderUserName>
+            <TabHeaderUserIcon ttgtheme={this.props.config.theme} type="user" theme="outlined" />
             {/* <TabHeaderToggleIcon
-              ttgTheme={this.props.config.theme}
+              ttgtheme={this.props.config.theme}
               type={this.state.openDropdown ? 'close' : 'down'}
             /> */}
           </div>
@@ -56,7 +56,4 @@ const mapStateToProps = state => ({
   config: state.config
 });
 
-export default connect(
-  mapStateToProps,
-  {}
-)(UserMenu);
+export default connect(mapStateToProps, {})(UserMenu);
