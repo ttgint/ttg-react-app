@@ -1,13 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'antd';
 import { connect } from 'react-redux';
-import {
-  TabHeaderUser,
-  TabHeaderUserIcon,
-  TabHeaderUserName,
-  TabHeaderToggleIcon,
-  UserDropDownDetail
-} from '../styles';
+import { TabHeaderUser, TabHeaderUserIcon, TabHeaderUserName, UserDropDownDetail } from '../styles';
 
 class UserMenu extends React.Component {
   state = {

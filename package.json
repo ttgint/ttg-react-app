@@ -22,10 +22,10 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",
-    "swr": "^0.1.14"
+    "swr": "^0.1.15"
   },
   "devDependencies": {
-    "@ttgint/eslint-config-react": "^3.0.0",
+    "@ttgint/eslint-config-react": "^3.1.0",
     "eslint": "^6.7.2",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
