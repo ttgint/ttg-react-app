@@ -19,7 +19,7 @@ const TabHeaderUser = styled.div`
 `;
 
 const TabHeaderUserName = styled.p`
-  color: ${props => theme[props.ttgTheme].headerUserNameColor} !important;
+  color: ${props => theme[props.ttgtheme].headerUserNameColor} !important;
   padding-left: 15px;
   display: inline-block;
   margin: 0px;
@@ -28,9 +28,9 @@ const TabHeaderUserName = styled.p`
 `;
 
 const UserDropDownDetail = styled.div`
-  background-color: ${props => theme[props.ttgTheme].userDropDownDetailBg} !important;
+  background-color: ${props => theme[props.ttgtheme].userDropDownDetailBg} !important;
   p {
-    color: ${props => theme[props.ttgTheme].userDropDownDetailColor} !important;
+    color: ${props => theme[props.ttgtheme].userDropDownDetailColor} !important;
   }
   padding: 10px 15px;
   right: -20px;
@@ -51,14 +51,14 @@ const Trigger = styled(Icon)`
   transition: color 0.3s;
   position: relative;
   top: -7px;
-  color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
+  color: ${props => theme[props.ttgtheme].menuTriggerColor} !important;
   &:hover {
-    color: ${props => theme[props.ttgTheme].menuTriggerColor} !important;
+    color: ${props => theme[props.ttgtheme].menuTriggerColor} !important;
   }
 `;
 
 const TabHeaderUserIcon = styled(Icon)`
-  color: ${props => theme[props.ttgTheme].headerUserIconColor} !important;
+  color: ${props => theme[props.ttgtheme].headerUserIconColor} !important;
   position: relative;
   top: -3px;
   margin-left: 10px;
@@ -66,13 +66,13 @@ const TabHeaderUserIcon = styled(Icon)`
 `;
 
 const TabHeaderToggleIcon = styled(Icon)`
-  color: ${props => theme[props.ttgTheme].headerUserIconColor} !important;
+  color: ${props => theme[props.ttgtheme].headerUserIconColor} !important;
   position: absolute;
   right: 20px;
   top: 25px;
 `;
 const HeaderMenuBtn = styled.button`
-  color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
+  color: ${props => theme[props.ttgtheme].headerMenuBtnColor} !important;
   right: ${props => props.right}px;
   float: right;
   top: -1px;
@@ -89,17 +89,17 @@ const HeaderMenuBtn = styled.button`
   }
   &:hover {
     a {
-      color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
+      color: ${props => theme[props.ttgtheme].headerMenuBtnColor} !important;
     }
   }
   a {
-    color: ${props => theme[props.ttgTheme].headerMenuBtnColor} !important;
+    color: ${props => theme[props.ttgtheme].headerMenuBtnColor} !important;
   }
 `;
 
 const WrapperContent = styled.div`
   // background: #fff;
-  background: ${props => theme[props.ttgTheme].wrapperContentBg} !important;
+  background: ${props => theme[props.ttgtheme].wrapperContentBg} !important;
   padding: 24px;
   margin: 20px 0px 0px 0px;
   min-height: 280;

@@ -28,7 +28,7 @@ class Routes extends Component {
               visibleHelp: !this.props.config.visibleHelp
             });
           }}
-          ttgTheme={this.props.config_data.theme}
+          ttgtheme={this.props.config_data.theme}
           right={335}
         >
           <Tooltip placement="bottom" title="Help">
@@ -41,7 +41,7 @@ class Routes extends Component {
               visibleNotification: !this.props.config.visibleNotification
             });
           }}
-          ttgTheme={this.props.config_data.theme}
+          ttgtheme={this.props.config_data.theme}
           right={280}
         >
           <Tooltip placement="bottom" title="Notification">
@@ -54,7 +54,7 @@ class Routes extends Component {
               visibleSettings: !this.props.config.visibleSettings
             });
           }}
-          ttgTheme={this.props.config_data.theme}
+          ttgtheme={this.props.config_data.theme}
           right={225}
         >
           <Tooltip placement="bottom" title="Settings">
@@ -63,7 +63,7 @@ class Routes extends Component {
         </HeaderMenuBtn>
 
         <Trigger
-          ttgTheme={this.props.config_data.theme}
+          ttgtheme={this.props.config_data.theme}
           type={this.props.config_data.collapsed ? 'menu-unfold' : 'menu-fold'}
           onClick={this.toggle}
         />
@@ -85,7 +85,4 @@ const mapStateToProps = state => ({
   config_data: state.config
 });
 
-export default connect(
-  mapStateToProps,
-  { config }
-)(Routes);
+export default connect(mapStateToProps, { config })(Routes);

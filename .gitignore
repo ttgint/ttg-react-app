@@ -25,3 +25,10 @@ yarn.lock
 .vscode
 package-lock.json
 *.env*
+build
+
+*.orig
+*_LOCAL_*
+*_REMOTE_*
+*_BASE_*
+*_BACKUP_*

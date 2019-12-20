@@ -13,8 +13,6 @@ import FancyCheckbox from './components/fancy-checkbox';
 const { Content } = Layout;
 
 class Routes extends Component {
-  state = {};
-
   toggle = () => {
     this.setState(prevState => ({
       collapsed: !prevState.collapsed
@@ -118,7 +116,4 @@ const mapStateToProps = state => ({
   config_data: state.config
 });
 
-export default connect(
-  mapStateToProps,
-  { config }
-)(Routes);
+export default connect(mapStateToProps, { config })(Routes);
